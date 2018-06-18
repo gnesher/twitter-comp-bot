@@ -69,7 +69,6 @@ def fetch_new_tweets_from_db(tz, lc):
                     # status = 9
                     error = e
                     logger.error(str(error))
-                    client.captureException()
 		if error == None or error[0][0]['code'] == 34:
 		    cursor.execute(
 		        "DELETE FROM " +
@@ -84,7 +83,6 @@ def fetch_new_tweets_from_db(tz, lc):
                 status = 9
                 error = e
                 logger.warning(str(error))
-                client.captureException()
             else:
                 try:
                     cursor.execute(
@@ -161,12 +159,6 @@ if __name__ == '__main__':
     logging.basicConfig(
         filename="%sbasic.log" % DB_PREFIX, level=logging.WARNING,
         format='%(asctime)s - %(levelname)s - %(message)s'
-    )
-
-    # set Raven
-    client = raven.Client(
-        dsn='https://de6bc5b15d104a718820935456fe7b81:963ab45cb56f4ae3984f1cc845fc9aec@app.getsentry.com/50508',
-        include_paths=['publisher.py']
     )
 
     # set up tweepy

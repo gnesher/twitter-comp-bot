@@ -147,28 +147,19 @@ class StdOutListener(tweepy.StreamListener):
                 retweets_to_populate = []
 
     def on_error(self, status_code):
-        client.captureMessage('Encountered error with status code:' + repr(status_code.encode('utf-8')))
         return True
 
     def on_disconnect(self, notice):
-        client.captureMessage('disconnected from twitter:' + repr(notice.encode('utf-8')))
         return True
 
     def on_timeout(self):
         print 'Timeout...'
-        client.captureMessage('connection timeout')
         return True
 
 if __name__ == '__main__':
     l = StdOutListener()
     auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
     auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
-
-    # set Raven
-    client = raven.Client(
-        dsn='https://de6bc5b15d104a718820935456fe7b81:963ab45cb56f4ae3984f1cc845fc9aec@app.getsentry.com/50508',
-        include_paths=['consumer.py']
-    )
 
     stream = tweepy.Stream(auth, l)
     stream.filter(track=QUERY)
