@@ -3,11 +3,11 @@ A database driven Twitter competition bot written in Python
 
 # a little background
 I've been running a twitter competition bot in the UK for about 3 years.
-The bot has finally been blocked by Twitter and I've already left the UK last year so I thought it's time to share the code as it's the most advanced script I've seen so far
-This doesn't mean the code is written well - as it was an experiment at playing with Python. But it does work, and has provided hundreds of prizes over it's lifetime.
+The account has finally been blocked by Twitter and I've already left the UK last year so I thought I'd the code I've written so far.
+While it's not the cleanest code out there the bot was the most successful I've seen (and I've compared it to other solutions avilable in Github).
 
-# I obviously take no responsibility for any problems that may be caused by running this code.
-My account was eventually locked (though it took 3 years)
+# I take no responsibility for any problems which may be caused by running this code.
+My account was eventually locked (though it took 3 years).
 
 # Set up instructions
 This is just a rough guide, some changes might be required.
