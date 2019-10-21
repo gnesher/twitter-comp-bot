@@ -36,6 +36,6 @@ stevedore==1.15.0
 supervisor==3.0b2
 traitlets==4.1.0
 tweepy==3.4.0
-urllib3==1.7.1
+urllib3==1.24.2
 virtualenv==15.0.2
 zope.interface==4.0.5
